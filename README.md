@@ -1,0 +1,1 @@
+**locofy setup test
