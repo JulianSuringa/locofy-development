@@ -3,9 +3,15 @@ import Group from "./Group";
 
 export type ContentType = {
   className?: string;
+  text?: string;
+  text1?: string;
 };
 
-const Content: FunctionComponent<ContentType> = ({ className = "" }) => {
+const Content: FunctionComponent<ContentType> = ({
+  className = "",
+  text,
+  text1,
+}) => {
   return (
     <div
       className={`self-stretch rounded-boundvariablesdata3 flex flex-row items-center justify-between flex-wrap content-center gap-5 text-left text-xs text-black-40 font-regular ${className}`}
@@ -18,7 +24,7 @@ const Content: FunctionComponent<ContentType> = ({ className = "" }) => {
           src="/byewind@2x.png"
         />
       </div>
-      <Group />
+      <Group text1="6" text1="8" />
     </div>
   );
 };

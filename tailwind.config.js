@@ -43,8 +43,8 @@ module.exports = {
       },
     },
     fontSize: {
-      xs: "0.75rem",
-      sm: "0.875rem",
+      xs: "12px",
+      sm: "14px",
       inherit: "inherit",
     },
   },
