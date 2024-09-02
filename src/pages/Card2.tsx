@@ -1,4 +1,4 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useMemo, type CSSProperties } from "react";
 import Text1 from "../components/Text1";
 import StatusBadge from "../components/StatusBadge";
 import Strip from "../components/Strip";
@@ -23,6 +23,9 @@ export type Card2Type = {
   inProgressMinWidth?: string;
   stripPadding?: string;
   rectangleHeight?: string;
+
+  /** Style props */
+  cardPosition?: CSSProperties["position"];
 };
 
 const Card2: FunctionComponent<Card2Type> = ({
@@ -45,11 +48,21 @@ const Card2: FunctionComponent<Card2Type> = ({
   inProgressMinWidth,
   stripPadding,
   rectangleHeight,
+  cardPosition,
 }) => {
+  const cardStyle: CSSProperties = useMemo(() => {
+    return {
+      position: cardPosition,
+    };
+  }, [cardPosition]);
+
   return (
-    <div className="w-full relative rounded-boundvariablesdata13 bg-background-bg2 flex flex-col items-start justify-start p-boundvariablesdata14 box-border gap-boundvariablesdata12 min-w-[15rem] leading-[normal] tracking-[normal] text-left text-[0.75rem] text-black-100 font-regular">
-      <div className="self-stretch rounded-boundvariablesdata4 flex flex-row items-start justify-start flex-wrap content-start py-[0rem] pl-[0rem] pr-[0.125rem] gap-x-[1.25rem] gap-y-[1.125rem]">
-        <div className="flex-1 flex flex-col items-start justify-start pt-[0.125rem] px-[0rem] pb-[0rem]">
+    <div
+      className="w-full relative rounded-boundvariablesdata13 bg-background-bg2 flex flex-col items-start justify-start p-boundvariablesdata14 box-border gap-boundvariablesdata12 min-w-[240px] leading-[normal] tracking-[normal] text-left text-xs text-black-100 font-regular"
+      style={cardStyle}
+    >
+      <div className="self-stretch rounded-boundvariablesdata4 flex flex-row items-start justify-start flex-wrap content-start py-0 pl-0 pr-0.5 gap-x-5 gap-y-[18px]">
+        <div className="flex-1 flex flex-col items-start justify-start pt-0.5 px-0 pb-0">
           <Text1
             text2={text2}
             text={text}
@@ -74,7 +87,7 @@ const Card2: FunctionComponent<Card2Type> = ({
           />
         </div>
       </div>
-      <div className="self-stretch rounded-boundvariablesdata3 flex flex-row items-start justify-between flex-wrap content-start pt-boundvariablesdata12 pb-boundvariablesdata10 pl-[0rem] pr-[0.125rem] gap-[1.25rem]">
+      <div className="self-stretch rounded-boundvariablesdata3 flex flex-row items-start justify-between flex-wrap content-start pt-boundvariablesdata12 pb-boundvariablesdata10 pl-0 pr-0.5 gap-5">
         <div className="rounded-boundvariablesdata4 flex flex-row items-center justify-center">
           <img
             className="h-boundvariablesdata9 w-boundvariablesdata9 relative rounded-boundvariablesdata8 overflow-hidden shrink-0 object-cover"
@@ -83,7 +96,7 @@ const Card2: FunctionComponent<Card2Type> = ({
             src="/byewind@2x.png"
           />
         </div>
-        <div className="flex flex-col items-start justify-start pt-[0.25rem] px-[0rem] pb-[0rem]">
+        <div className="flex flex-col items-start justify-start pt-1 px-0 pb-0">
           <StatusBadge
             dotIconHeight={dotIconHeight}
             dotIconWidth={dotIconWidth}
@@ -94,9 +107,9 @@ const Card2: FunctionComponent<Card2Type> = ({
         </div>
       </div>
       <Strip stripPadding={stripPadding} rectangleHeight={rectangleHeight} />
-      <div className="self-stretch rounded-boundvariablesdata4 flex flex-row items-start justify-start flex-wrap content-start py-[0rem] pl-[0rem] pr-[0.125rem] gap-x-[1rem] gap-y-[0.75rem]">
+      <div className="self-stretch rounded-boundvariablesdata4 flex flex-row items-start justify-start flex-wrap content-start py-0 pl-0 pr-0.5 gap-x-4 gap-y-3">
         <div className="flex-1 rounded-boundvariablesdata4 flex flex-row items-start justify-start">
-          <div className="flex-1 relative leading-[1rem]">
+          <div className="flex-1 relative leading-[16px]">
             <span>{`36 `}</span>
             <span className="text-gray">/</span>
             <span>{` 49 `}</span>
@@ -104,7 +117,7 @@ const Card2: FunctionComponent<Card2Type> = ({
           </div>
         </div>
         <div className="rounded-boundvariablesdata4 flex flex-row items-start justify-start">
-          <div className="relative leading-[1rem] inline-block min-w-[1.625rem]">
+          <div className="relative leading-[16px] inline-block min-w-[26px]">
             75%
           </div>
         </div>

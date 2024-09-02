@@ -1,4 +1,4 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useMemo, type CSSProperties } from "react";
 import Text1 from "./Text1";
 import StatusBadge from "./StatusBadge";
 import Strip from "./Strip";
@@ -24,6 +24,9 @@ export type Card2Type = {
   inProgressMinWidth?: string;
   stripPadding?: string;
   rectangleHeight?: string;
+
+  /** Style props */
+  cardPosition?: CSSProperties["position"];
 };
 
 const Card2: FunctionComponent<Card2Type> = ({
@@ -47,10 +50,18 @@ const Card2: FunctionComponent<Card2Type> = ({
   inProgressMinWidth,
   stripPadding,
   rectangleHeight,
+  cardPosition,
 }) => {
+  const cardStyle: CSSProperties = useMemo(() => {
+    return {
+      position: cardPosition,
+    };
+  }, [cardPosition]);
+
   return (
     <div
       className={`w-[280px] rounded-boundvariablesdata13 bg-background-bg2 flex flex-col items-start justify-start p-boundvariablesdata14 box-border gap-boundvariablesdata12 min-w-[240px] leading-[normal] tracking-[normal] text-left text-xs text-black-100 font-regular ${className}`}
+      style={cardStyle}
     >
       <div className="self-stretch rounded-boundvariablesdata4 flex flex-row items-start justify-start flex-wrap content-start py-0 pl-0 pr-0.5 gap-x-5 gap-y-[18px]">
         <div className="flex-1 flex flex-col items-start justify-start pt-0.5 px-0 pb-0">
