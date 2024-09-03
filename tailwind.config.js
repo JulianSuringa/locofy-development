@@ -15,10 +15,13 @@ module.exports = {
         cornflowerblue: "#8a8cd9",
         honeydew: "#def8ee",
         mediumaquamarine: "#4aa785",
+        "background-bg5": "rgba(229, 236, 246, 0.5)",
       },
       spacing: {
         boundvariablesdata: "8px",
         boundvariablesdata1: "24px",
+        boundvariablesdata5: "16px",
+        boundvariablesdata6: "4px",
         boundvariablesdata7: "16px",
         boundvariablesdata9: "24px",
         boundvariablesdata10: "4px",
@@ -26,6 +29,7 @@ module.exports = {
         boundvariablesdata14: "24px",
         boundvariablesdata18: "40px",
         boundvariablesdata19: "12px",
+        boundvariablesdata21: "32px",
       },
       fontFamily: {
         regular: "Inter",
