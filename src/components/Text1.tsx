@@ -1,86 +1,35 @@
-import { FunctionComponent, useMemo, type CSSProperties } from "react";
+import { FunctionComponent } from "react";
 
 export type Text1Type = {
   className?: string;
+  text4?: string;
   text2?: string;
+  text3?: string;
   text?: string;
-
-  /** Style props */
-  textGap?: CSSProperties["gap"];
-  textOverflow?: CSSProperties["overflow"];
-  textTextOverflow?: CSSProperties["textOverflow"];
-  textDisplay?: CSSProperties["display"];
-  textOverflow1?: CSSProperties["overflow"];
-  textTextOverflow1?: CSSProperties["textOverflow"];
-  textWebkitLineClamp?: CSSProperties["webkitLineClamp"];
-  textWebkitBoxOrient?: CSSProperties["webkitBoxOrient"];
-  textFontSize?: CSSProperties["fontSize"];
-  textFontSize1?: CSSProperties["fontSize"];
 };
 
 const Text1: FunctionComponent<Text1Type> = ({
   className = "",
-  text2 = "First, a disclaimer – the entire process writing a blog post often takes a couple of hours if you can type",
-  text = "Meeting with customer",
-  textGap,
-  textOverflow,
-  textTextOverflow,
-  textDisplay,
-  textOverflow1,
-  textTextOverflow1,
-  textWebkitLineClamp,
-  textWebkitBoxOrient,
-  textFontSize,
-  textFontSize1,
+  text4 = "4698",
+  text2 = "6598",
+  text3 = "1236",
+  text = "9656",
 }) => {
-  const textStyle: CSSProperties = useMemo(() => {
-    return {
-      gap: textGap,
-    };
-  }, [textGap]);
-
-  const text1Style: CSSProperties = useMemo(() => {
-    return {
-      overflow: textOverflow,
-      textOverflow: textTextOverflow,
-      fontSize: textFontSize,
-    };
-  }, [textOverflow, textTextOverflow, textFontSize]);
-
-  const text2Style: CSSProperties = useMemo(() => {
-    return {
-      display: textDisplay,
-      overflow: textOverflow1,
-      textOverflow: textTextOverflow1,
-      webkitLineClamp: textWebkitLineClamp,
-      webkitBoxOrient: textWebkitBoxOrient,
-      fontSize: textFontSize1,
-    };
-  }, [
-    textDisplay,
-    textOverflow1,
-    textTextOverflow1,
-    textWebkitLineClamp,
-    textWebkitBoxOrient,
-    textFontSize1,
-  ]);
-
   return (
     <div
-      className={`self-stretch rounded-boundvariablesdata3 flex flex-col items-start justify-center gap-boundvariablesdata10 text-left text-sm text-black-100 font-regular ${className}`}
-      style={textStyle}
+      className={`rounded-[8px] flex flex-row items-center justify-start flex-wrap content-center pt-[4px] pb-[0px] pl-[0px] pr-[68px] gap-x-[8px] gap-y-[7.4px] text-left text-sm text-[#000] font-sans ${className}`}
     >
-      <div
-        className="self-stretch relative leading-[20px] font-semibold"
-        style={text1Style}
-      >
+      <div className="relative leading-[20px] font-semibold inline-block min-w-[36px]">
         {text}
       </div>
-      <div
-        className="self-stretch relative text-xs leading-[16px] text-black-40 [display:-webkit-inline-box] overflow-hidden text-ellipsis [-webkit-line-clamp:2] [-webkit-box-orient:vertical]"
-        style={text2Style}
-      >
+      <a className="[text-decoration:none] relative leading-[20px] font-semibold text-[inherit] inline-block min-w-[36px]">
         {text2}
+      </a>
+      <div className="relative leading-[20px] font-semibold inline-block min-w-[33px]">
+        {text3}
+      </div>
+      <div className="relative leading-[20px] font-semibold inline-block min-w-[37px]">
+        {text4}
       </div>
     </div>
   );

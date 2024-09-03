@@ -1,30 +1,25 @@
 import { FunctionComponent } from "react";
-import Group from "./Group";
 
 export type ContentType = {
   className?: string;
-  text?: string;
-  text1?: string;
 };
 
-const Content: FunctionComponent<ContentType> = ({
-  className = "",
-  text,
-  text1,
-}) => {
+const Content: FunctionComponent<ContentType> = ({ className = "" }) => {
   return (
     <div
-      className={`self-stretch rounded-boundvariablesdata3 flex flex-row items-center justify-between flex-wrap content-center gap-5 text-left text-xs text-black-40 font-regular ${className}`}
+      className={`self-stretch rounded-[8px] flex flex-row items-center justify-start flex-wrap content-center py-[0px] pl-[0px] pr-[2px] gap-x-[16px] gap-y-[14px] text-left text-sm text-[rgba(0,0,0,0.4)] font-sans ${className}`}
     >
-      <div className="rounded-boundvariablesdata4 flex flex-row items-center justify-center">
+      <div className="flex-1 rounded-[8px] flex flex-col items-start justify-center">
+        <div className="self-stretch relative leading-[20px]">Exp 06/25</div>
+      </div>
+      <div className="rounded-[8px] flex flex-row items-center justify-center">
         <img
-          className="h-boundvariablesdata9 w-boundvariablesdata9 relative rounded-boundvariablesdata8 overflow-hidden shrink-0 object-cover"
+          className="h-[40px] w-[40px] relative object-cover"
           loading="lazy"
           alt=""
-          src="/byewind@2x.png"
+          src="/visa@2x.png"
         />
       </div>
-      <Group text1="6" text1="8" />
     </div>
   );
 };

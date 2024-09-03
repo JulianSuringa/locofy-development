@@ -5,8 +5,7 @@ import {
   useNavigationType,
   useLocation,
 } from "react-router-dom";
-import Tag1 from "./components/Tag";
-import Card2 from "./pages/Card2";
+import StatusBadge from "./components/StatusBadge";
 
 function App() {
   const action = useNavigationType();
@@ -28,10 +27,6 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/card":
-        title = "";
-        metaDescription = "";
-        break;
     }
 
     if (title) {
@@ -50,8 +45,7 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Tag1 />} />
-      <Route path="/card" element={<Card2 />} />
+      <Route path="/" element={<StatusBadge />} />
     </Routes>
   );
 }
