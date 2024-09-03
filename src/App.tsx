@@ -5,7 +5,7 @@ import {
   useNavigationType,
   useLocation,
 } from "react-router-dom";
-import Text1 from "./components/Text1";
+import StatusBadge from "./components/StatusBadge";
 
 function App() {
   const action = useNavigationType();
@@ -45,7 +45,7 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Text1 />} />
+      <Route path="/" element={<StatusBadge />} />
     </Routes>
   );
 }

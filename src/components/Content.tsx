@@ -14,10 +14,10 @@ const Content: FunctionComponent<ContentType> = ({ className = "" }) => {
       </div>
       <div className="rounded-[8px] flex flex-row items-center justify-center">
         <img
-          className="h-[40px] w-[40px] relative"
+          className="h-[40px] w-[40px] relative object-cover"
           loading="lazy"
           alt=""
-          src="/mastercard.svg"
+          src="/visa@2x.png"
         />
       </div>
     </div>

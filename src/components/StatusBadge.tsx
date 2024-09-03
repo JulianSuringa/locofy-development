@@ -9,7 +9,7 @@ const StatusBadge: FunctionComponent<StatusBadgeType> = ({
 }) => {
   return (
     <div
-      className={`rounded-[80px] bg-[#def8ee] flex flex-row items-center justify-start py-[1px] px-[8px] text-left text-xs text-[#4aa785] font-sans ${className}`}
+      className={`rounded-boundvariablesdata11 bg-honeydew flex flex-row items-center justify-start py-px px-boundvariablesdata4 text-left text-xs text-mediumaquamarine font-regular ${className}`}
     >
       <a className="[text-decoration:none] relative leading-[16px] text-[inherit] inline-block min-w-[36px]">
         Active
